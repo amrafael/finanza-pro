@@ -127,17 +127,17 @@ const Login: React.FC = () => {
     return (
         <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
             <div className="bg-white w-full max-w-md rounded-2xl shadow-xl overflow-hidden border border-slate-100">
-                <div className="p-8 bg-gradient-to-br from-indigo-600 to-teal-500 text-center">
+                <div className="p-8 bg-gradient-to-br from-emerald-800 to-teal-900 text-center">
                     <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl mx-auto flex items-center justify-center mb-4 shadow-lg">
                         <Wallet size={32} className="text-white" />
                     </div>
                     <h1 className="text-2xl font-bold text-white mb-1">Finanza Pro</h1>
-                    <p className="text-indigo-100 text-sm">Controle financeiro inteligente</p>
+                    <p className="text-emerald-100/80 text-sm">Controle financeiro inteligente</p>
                 </div>
 
                 <div className="p-8">
                     <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                        {authMode !== 'update-password' && <Shield className="text-indigo-500" size={24} />}
+                        {authMode !== 'update-password' && <Shield className="text-emerald-600" size={24} />}
                         {renderTitle()}
                     </h2>
 
@@ -167,7 +167,7 @@ const Login: React.FC = () => {
                                         disabled={loading}
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                                        className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none transition-all"
                                         placeholder="seu@email.com"
                                     />
                                 </div>
@@ -185,7 +185,7 @@ const Login: React.FC = () => {
                                             required
                                             value={name}
                                             onChange={(e) => setName(e.target.value)}
-                                            className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                                            className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none transition-all"
                                             placeholder="Seu nome completo"
                                         />
                                     </div>
@@ -200,7 +200,7 @@ const Login: React.FC = () => {
                                             required
                                             value={cpf}
                                             onChange={(e) => setCpf(maskCPF(e.target.value))}
-                                            className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                                            className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none transition-all"
                                             placeholder="000.000.000-00"
                                             maxLength={14}
                                         />
@@ -216,7 +216,7 @@ const Login: React.FC = () => {
                                             required
                                             value={phone}
                                             onChange={(e) => setPhone(maskPhone(e.target.value))}
-                                            className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                                            className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none transition-all"
                                             placeholder="(00) 00000-0000"
                                             maxLength={15}
                                         />
@@ -233,7 +233,7 @@ const Login: React.FC = () => {
                                         <button
                                             type="button"
                                             onClick={() => setAuthMode('forgot-password')}
-                                            className="text-xs text-indigo-600 font-bold hover:underline"
+                                            className="text-xs text-emerald-700 font-bold hover:underline"
                                         >
                                             Esqueceu sua senha?
                                         </button>
@@ -246,7 +246,7 @@ const Login: React.FC = () => {
                                         required
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
-                                        className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                                        className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none transition-all"
                                         placeholder="••••••••"
                                         minLength={6}
                                     />
@@ -264,7 +264,7 @@ const Login: React.FC = () => {
                                         required
                                         value={confirmPassword}
                                         onChange={(e) => setConfirmPassword(e.target.value)}
-                                        className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                                        className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none transition-all"
                                         placeholder="••••••••"
                                         minLength={6}
                                     />
@@ -275,7 +275,7 @@ const Login: React.FC = () => {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2 mt-4"
+                            className="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-emerald-900/30 flex items-center justify-center gap-2 mt-4"
                         >
                             {loading ? (
                                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -297,7 +297,7 @@ const Login: React.FC = () => {
                                 {authMode === 'signup' ? 'Já tem uma conta?' : 'Não tem uma conta?'}
                                 <button
                                     onClick={() => setAuthMode(authMode === 'signup' ? 'signin' : 'signup')}
-                                    className="ml-1 text-indigo-600 font-bold hover:underline"
+                                    className="ml-1 text-emerald-700 font-bold hover:underline"
                                 >
                                     {authMode === 'signup' ? 'Fazer Login' : 'Cadastre-se'}
                                 </button>

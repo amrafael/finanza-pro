@@ -55,14 +55,14 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setCurrentView, notifica
         <div className="flex flex-col h-full">
           <div className="p-6 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-teal-400 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-800 flex items-center justify-center shadow-lg shadow-emerald-900/30">
                 <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 2L2 7l10 5 10-5-10-5z" />
                   <path d="M2 17l10 5 10-5" />
                   <path d="M2 12l10 5 10-5" />
                 </svg>
               </div>
-              <h1 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-teal-400 bg-clip-text text-transparent">
+              <h1 className="text-xl font-bold bg-gradient-to-r from-emerald-400 to-teal-200 bg-clip-text text-transparent">
                 Finanza Pro
               </h1>
             </div>
@@ -90,7 +90,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setCurrentView, notifica
                 className={`
                   w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors
                   ${currentView === item.id
-                    ? 'bg-gradient-to-r from-indigo-500 to-teal-500 text-white shadow-lg shadow-indigo-500/20'
+                    ? 'bg-gradient-to-r from-emerald-600 to-teal-700 text-white shadow-lg shadow-emerald-900/20'
                     : 'text-slate-400 hover:bg-slate-800 hover:text-white'}
                 `}
               >
@@ -108,7 +108,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setCurrentView, notifica
               }}
               className="w-full flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-slate-800 transition-colors text-left"
             >
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500/20 to-teal-500/20 flex items-center justify-center text-indigo-400 font-bold overflow-hidden">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center text-emerald-400 font-bold overflow-hidden">
                 {profile?.avatar_url ? (
                   <img src={profile.avatar_url} alt={profile.full_name || 'Usuário'} className="w-full h-full object-cover" />
                 ) : (

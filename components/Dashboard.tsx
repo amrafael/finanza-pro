@@ -127,7 +127,7 @@ const Dashboard: React.FC<DashboardProps> = ({ transactions, investments, cards 
     <div className="space-y-6 animate-in fade-in duration-500">
       <header className="flex flex-col sm:flex-row justify-between items-center gap-4">
         <div>
-          <h2 className="text-3xl font-black bg-gradient-to-r from-indigo-800 to-teal-800 bg-clip-text text-transparent tracking-tight">
+          <h2 className="text-3xl font-black bg-gradient-to-r from-emerald-800 to-teal-800 bg-clip-text text-transparent tracking-tight">
             {greeting}, {firstName}
           </h2>
           <p className="text-slate-500 font-medium">Resumo estratégico da sua saúde financeira</p>
