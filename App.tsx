@@ -53,7 +53,7 @@ const AppContent: React.FC = () => {
 
       // Seed data for new users
       if (!cats || cats.length === 0) {
-        await seedService.seedInitialData();
+        await seedService.seedInitialData(user!.id);
         // Refetch seeded data
         [accs, cats] = await Promise.all([
           accountService.fetchAccounts(),
@@ -139,7 +139,7 @@ const AppContent: React.FC = () => {
 
   const handleAddTransaction = async (newTx: Omit<Transaction, 'id'>) => {
     try {
-      const created = await transactionService.create(newTx);
+      const created = await transactionService.create(newTx, user!.id);
       setTransactions(prev => [created, ...prev]);
     } catch (e) {
       alert('Erro ao criar transação');
@@ -166,7 +166,7 @@ const AppContent: React.FC = () => {
 
   const handleAddCategory = async (name: string, type: TransactionType, color: string) => {
     try {
-      const created = await categoryService.create({ name, type, color, is_default: false } as any);
+      const created = await categoryService.create({ name, type, color, is_default: false } as any, user!.id);
       setCategories(prev => [...prev, created]);
     } catch (e) {
       alert('Erro ao criar categoria');
@@ -195,7 +195,7 @@ const AppContent: React.FC = () => {
     try {
       const { id, ...rest } = acc;
       // If ID is pseudo-random from UI, drop it to let DB generate UUID
-      const created = await accountService.createAccount(rest);
+      const created = await accountService.createAccount(rest, user!.id);
       setBankAccounts(prev => [...prev, created]);
     } catch (e) {
       alert('Erro ao criar conta bancária');
@@ -224,7 +224,7 @@ const AppContent: React.FC = () => {
 
   const handleAddInvestment = async (newInv: Omit<Investment, 'id'>) => {
     try {
-      const created = await investmentService.create(newInv);
+      const created = await investmentService.create(newInv, user!.id);
       setInvestments(prev => [...prev, created]);
     } catch (e) {
       alert('Erro ao criar investimento');
@@ -252,7 +252,7 @@ const AppContent: React.FC = () => {
   const handleAddCard = async (card: CreditCard) => {
     try {
       const { id, ...rest } = card;
-      const created = await accountService.createCard(rest);
+      const created = await accountService.createCard(rest, user!.id);
       setCards(prev => [...prev, created]);
     } catch (e) {
       alert('Erro ao criar cartão');

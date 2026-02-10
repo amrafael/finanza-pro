@@ -13,10 +13,10 @@ export const categoryService = {
         return data as Category[];
     },
 
-    async create(category: Omit<Category, 'id'>) {
+    async create(category: Omit<Category, 'id'>, userId: string) {
         const { data, error } = await supabase
             .from('categories')
-            .insert([category])
+            .insert([{ ...category, user_id: userId }])
             .select()
             .single();
 
