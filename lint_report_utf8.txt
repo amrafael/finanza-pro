@@ -1,0 +1,123 @@
+﻿
+> finanza-pro---gest├úo-financeira@0.0.0 lint
+> eslint .
+
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\App.tsx
+  27:5  error    Error: Cannot access variable before it is declared
+
+`checkUpcomingPayments` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\App.tsx:27:5
+  25 |
+  26 |   useEffect(() => {
+> 27 |     checkUpcomingPayments();
+     |     ^^^^^^^^^^^^^^^^^^^^^ `checkUpcomingPayments` accessed before it is declared
+  28 |   }, [transactions, cards]);
+  29 |
+  30 |   const checkUpcomingPayments = () => {
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\App.tsx:30:3
+  28 |   }, [transactions, cards]);
+  29 |
+> 30 |   const checkUpcomingPayments = () => {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 31 |     const alerts: AppNotification[] = [];
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |     const today = new Date();
+     ÔÇª
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 69 |     setNotifications(alerts);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 70 |   };
+     | ^^^^^ `checkUpcomingPayments` is declared here
+  71 |
+  72 |   const markAsRead = (id: string) => {
+  73 |     setNotifications(prev => prev.map(n => n.id === id ? { ...n, read: true } : n));  react-hooks/immutability
+  28:6  warning  React Hook useEffect has a missing dependency: 'checkUpcomingPayments'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           react-hooks/exhaustive-deps
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\AIAdvisor.tsx
+  25:5  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\AIAdvisor.tsx:25:5
+  23 |
+  24 |   useEffect(() => {
+> 25 |     fetchAdvice();
+     |     ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  26 |   }, []);
+  27 |
+  28 |   return (  react-hooks/set-state-in-effect
+  26:6  warning  React Hook useEffect has a missing dependency: 'fetchAdvice'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         react-hooks/exhaustive-deps
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\BankAccountsManager.tsx
+  4:34  error  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\CreditCardsManager.tsx
+  4:74  error  'Landmark' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\Dashboard.tsx
+   5:39  error  'Legend' is defined but never used               @typescript-eslint/no-unused-vars
+   9:3   error  'TrendingUp' is defined but never used           @typescript-eslint/no-unused-vars
+   9:15  error  'TrendingDown' is defined but never used         @typescript-eslint/no-unused-vars
+   9:29  error  'DollarSign' is defined but never used           @typescript-eslint/no-unused-vars
+  35:9   error  'netBalance' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\InvestmentsBoard.tsx
+    6:27  error  'Info' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           @typescript-eslint/no-unused-vars
+    7:28  error  'PieChart' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+   10:3   error  'LineChart' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-unused-vars
+   10:14  error  'Line' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           @typescript-eslint/no-unused-vars
+  155:32  error  Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. This value was memoized in source but not in compilation output.
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\InvestmentsBoard.tsx:155:32
+  153 |   };
+  154 |
+> 155 |   const processedInvestments = useMemo(() => {
+      |                                ^^^^^^^^^^^^^^^
+> 156 |     const today = new Date();
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 157 |
+      ÔÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 201 |     });
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 202 |   }, [investments, cdiRate]);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Could not preserve existing memoization
+  203 |
+  204 |   const totalGross = processedInvestments.reduce((acc, i) => acc + i.value, 0);
+  205 |   const totalNet = processedInvestments.reduce((acc, i) => acc + (i.netValue || i.value), 0);  react-hooks/preserve-manual-memoization
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\Settings.tsx
+  2:24  error  'CreditCard' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\TransactionsList.tsx
+   4:94  error  'BarChart2' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-unused-vars
+   6:61  error  'Legend' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+  23:91  error  'onUpdateCategory' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         @typescript-eslint/no-unused-vars
+  76:7   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\TransactionsList.tsx:76:7
+  74 |   useEffect(() => {
+  75 |     if (editingTransaction) {
+> 76 |       setDescription(editingTransaction.description);
+     |       ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  77 |       setAmount(editingTransaction.amount.toString());
+  78 |       setCategory(editingTransaction.category);
+  79 |       setBankAccount(editingTransaction.bankAccount || (bankAccounts.length > 0 ? bankAccounts[0].name : ''));  react-hooks/set-state-in-effect
+
+Ô£û 21 problems (19 errors, 2 warnings)
+

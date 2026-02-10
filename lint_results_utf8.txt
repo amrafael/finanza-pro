@@ -1,0 +1,108 @@
+﻿
+> finanza-pro---gest├úo-financeira@0.0.0 lint
+> eslint .
+
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\App.tsx
+   11:10  error    'INITIAL_CATEGORIES' is defined but never used             @typescript-eslint/no-unused-vars
+   46:12  error    'txs' is never reassigned. Use 'const' instead             prefer-const
+   46:29  error    'invs' is never reassigned. Use 'const' instead            prefer-const
+   46:35  error    'crds' is never reassigned. Use 'const' instead            prefer-const
+   69:19  warning  Unexpected any. Specify a different type                   @typescript-eslint/no-explicit-any
+  144:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+  153:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+  162:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+  169:96  warning  Unexpected any. Specify a different type                   @typescript-eslint/no-explicit-any
+  171:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+  176:9   error    'handleUpdateCategory' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  180:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+  189:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+  196:15  error    'id' is assigned a value but never used                    @typescript-eslint/no-unused-vars
+  200:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+  209:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+  220:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+  229:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+  238:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+  247:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+  254:15  error    'id' is assigned a value but never used                    @typescript-eslint/no-unused-vars
+  257:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+  266:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+  275:14  error    'e' is defined but never used                              @typescript-eslint/no-unused-vars
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\AIAdvisor.tsx
+  25:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\AIAdvisor.tsx:25:5
+  23 |
+  24 |   useEffect(() => {
+> 25 |     fetchAdvice();
+     |     ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  26 |   }, [fetchAdvice]);
+  27 |
+  28 |   return (  react-hooks/set-state-in-effect
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\Dashboard.tsx
+    3:3   error    'AreaChart' is defined but never used         @typescript-eslint/no-unused-vars
+    4:39  error    'Legend' is defined but never used            @typescript-eslint/no-unused-vars
+    4:47  error    'LineChart' is defined but never used         @typescript-eslint/no-unused-vars
+    9:3   error    'TrendingUp' is defined but never used        @typescript-eslint/no-unused-vars
+    9:15  error    'TrendingDown' is defined but never used      @typescript-eslint/no-unused-vars
+    9:29  error    'DollarSign' is defined but never used        @typescript-eslint/no-unused-vars
+   11:28  error    'TrendingUpIcon' is defined but never used    @typescript-eslint/no-unused-vars
+   11:60  error    'TrendingDownIcon' is defined but never used  @typescript-eslint/no-unused-vars
+   11:92  error    'DollarSignIcon' is defined but never used    @typescript-eslint/no-unused-vars
+  372:54  warning  Unexpected any. Specify a different type      @typescript-eslint/no-explicit-any
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\InvestmentsBoard.tsx
+  155:32  error    Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. This value was memoized in source but not in compilation output.
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\InvestmentsBoard.tsx:155:32
+  153 |   };
+  154 |
+> 155 |   const processedInvestments = useMemo(() => {
+      |                                ^^^^^^^^^^^^^^^
+> 156 |     const today = new Date();
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 157 |
+      ÔÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 202 |     // eslint-disable-next-line react-hooks/preserve-manual-memoization
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 203 |   }, [investments, cdiRate]);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Could not preserve existing memoization
+  204 |
+  205 |   const totalGross = processedInvestments.reduce((acc, i) => acc + i.value, 0);
+  206 |   const totalNet = processedInvestments.reduce((acc, i) => acc + (i.netValue || i.value), 0);  react-hooks/preserve-manual-memoization
+  202:5   warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/preserve-manual-memoization')
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\Login.tsx
+  100:23  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\Settings.tsx
+  71:23  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  91:27  error    'e' is defined but never used             @typescript-eslint/no-unused-vars
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\Sidebar.tsx
+  2:118  error  'User' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\components\TransactionsList.tsx
+  120:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\src\contexts\AuthContext.tsx
+   36:11  error    'initialized' is assigned a value but never used                                                                                @typescript-eslint/no-unused-vars
+  152:14  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\amraf\Desktop\Projetos 2026\App Finanza Pro\src\services\seedService.ts
+  13:80  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+Ô£û 45 problems (36 errors, 9 warnings)
+  0 errors and 2 warnings potentially fixable with the `--fix` option.
+

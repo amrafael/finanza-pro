@@ -1,0 +1,89 @@
+﻿
+> finanza-pro---gest├úo-financeira@0.0.0 test:run
+> vitest run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90mC:/Users/amraf/Desktop/Projetos 2026/App Finanza Pro[39m
+
+ [31mÔØ»[39m __tests__/App.test.tsx [2m([22m[2m0 test[22m[2m)[22m
+node.exe : 
+No linha:1 caractere:1
++ & "C:\Program Files\nodejs/node.exe" 
+"C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified 
+   : (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComman 
+   dError
+ 
+[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m[1m[41m 
+Failed Suites 1 
+[49m[22m[31mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[39m
+
+[41m[1m FAIL [22m[49m 
+__tests__/App.test.tsx[2m [ 
+__tests__/App.test.tsx ][22m
+[31m[1mError[22m: Failed to resolve 
+import "../../constants" from 
+"components/BankLogo.tsx". Does the file 
+exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: 
+[36mC:/Users/amraf/Desktop/Projetos 
+2026/App Finanza 
+Pro/components/BankLogo.tsx[39m:4:27
+[33m  1  |  import { jsxDEV } from 
+"react/jsx-dev-runtime";
+  2  |  import { Landmark } from 
+"lucide-react";
+  3  |  import { BANK_LOGOS } from 
+"../../constants";
+     |                              ^
+  4  |  const BankLogo = ({ name, size = 
+24 }) => {
+  5  |    const logoUrl = 
+Object.entries(BANK_LOGOS).find([39m
+[90m [2mÔØ»[22m 
+TransformPluginContext._formatLog ../../Pro
+jetos%202026/App%20Finanza%20Pro/node_modul
+es/vite/dist/node/chunks/dep-D4NMHUTW.js:[
+2m42528:41[22m[39m
+[90m [2mÔØ»[22m 
+TransformPluginContext.error ../../Projetos
+%202026/App%20Finanza%20Pro/node_modules/vi
+te/dist/node/chunks/dep-D4NMHUTW.js:[2m425
+25:16[22m[39m
+[90m [2mÔØ»[22m normalizeUrl ../../Proje
+tos%202026/App%20Finanza%20Pro/node_modules
+/vite/dist/node/chunks/dep-D4NMHUTW.js:[2m
+40504:23[22m[39m
+[90m [2mÔØ»[22m ../../Projetos%202026/Ap
+p%20Finanza%20Pro/node_modules/vite/dist/no
+de/chunks/dep-D4NMHUTW.js:[2m40623:37[22m
+[39m
+[90m [2mÔØ»[22m 
+TransformPluginContext.transform ../../Proj
+etos%202026/App%20Finanza%20Pro/node_module
+s/vite/dist/node/chunks/dep-D4NMHUTW.js:[2
+m40550:7[22m[39m
+[90m [2mÔØ»[22m 
+EnvironmentPluginContainer.transform ../../
+Projetos%202026/App%20Finanza%20Pro/node_mo
+dules/vite/dist/node/chunks/dep-D4NMHUTW.js
+:[2m42323:18[22m[39m
+[90m [2mÔØ»[22m loadAndTransform ../../P
+rojetos%202026/App%20Finanza%20Pro/node_mod
+ules/vite/dist/node/chunks/dep-D4NMHUTW.js:
+[2m35739:27[22m[39m
+
+[31m[2mÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»Ô
+Ä»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/1]
+ÔÄ»[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 11:09:39
+[2m   Duration [22m 2.20s[2m (transform 194ms, setup 118ms, import 0ms, tests 0ms, environment 918ms)[22m
+
